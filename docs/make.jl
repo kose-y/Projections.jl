@@ -9,6 +9,6 @@ makedocs(
 )
 
 deploydocs(
-    repo   = "github.com/Hua-Zhou/Projections.jl.git",
+    repo   = "github.com/kose-y/Projections.jl.git",
     target = "build"
 )
