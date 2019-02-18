@@ -11,7 +11,7 @@ end
 
 A ball with center `c` and radius `r`.
 """
-function Box(c::Vector{T}, r::T) where T <: Real
+function Ball(c::Vector{T}, r::T) where T <: Real
     r ≥ 0 || throw(ArgumentError("radius should be positive"))
     Ball(c, r)
 end
