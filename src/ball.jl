@@ -1,19 +1,15 @@
 export Ball
 
-struct Ball{T <: Real} <: ConvexSet
-    center::Vector{T}
-    radius::T
-end
-
 """
     Ball()
     Ball(c, r)
 
 A ball with center `c` and radius `r`.
 """
-function Ball(c::Vector{T}, r::T) where T <: Real
-    r ≥ 0 || throw(ArgumentError("radius should be positive"))
-    Ball(c, r)
+struct Ball{T <: Real} <: ConvexSet
+    center::Vector{T}
+    radius::T
+    Ball(c, r) = r ≥ 0 ? new{typeof(r)}(c, r) : throw(ArgumentError("radius should be positive"))
 end
 
 """
